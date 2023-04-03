@@ -1,0 +1,8 @@
+.wrapper {
+	@include ui-padding(top, 4);
+}
+
+.container {
+	display: flex;
+	gap: 68px;
+}

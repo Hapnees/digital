@@ -1,0 +1,28 @@
+.blogsControls {
+	display: flex;
+	gap: 44px;
+
+	@include ui-margin(bottom, 4);
+
+	> li {
+		> input[type='radio'] {
+			display: none;
+
+			&:checked + label {
+				text-decoration: underline;
+				text-underline-offset: 8px;
+			}
+		}
+
+		> label {
+			@include ui-font(7);
+
+			cursor: pointer;
+
+			&:hover {
+				text-decoration: underline;
+				text-underline-offset: 8px;
+			}
+		}
+	}
+}

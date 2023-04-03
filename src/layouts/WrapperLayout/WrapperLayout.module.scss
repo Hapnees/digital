@@ -1,0 +1,8 @@
+.wrapper {
+	@include ui-padding(top, 15);
+	@include ui-padding(bottom, 15);
+}
+
+.container {
+	margin: auto;
+}

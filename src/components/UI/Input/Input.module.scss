@@ -1,0 +1,27 @@
+.wrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.input {
+	background-color: $input-color;
+	border: none;
+	border-radius: 6px;
+
+	@include ui-font(4);
+
+	width: 330px;
+
+	padding: 4px 31px 4px 8px;
+}
+
+.searchIcon {
+	position: absolute;
+	right: 6px;
+
+	cursor: pointer;
+
+	width: 20px;
+	height: 20px;
+}

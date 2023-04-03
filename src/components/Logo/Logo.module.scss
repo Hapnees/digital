@@ -1,0 +1,20 @@
+.wrapper {
+	display: inline-flex;
+
+	width: 280px;
+	height: 60px;
+
+	@include ui-font(10);
+
+	cursor: pointer;
+
+	> p {
+		&:first-child {
+			align-self: center;
+		}
+
+		&:last-child {
+			font-size: 0.75em;
+		}
+	}
+}

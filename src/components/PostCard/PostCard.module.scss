@@ -1,0 +1,48 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	@include ui-margin(bottom, 3);
+}
+
+.date {
+	color: $gray-date-color;
+	@include ui-font(4);
+	@include ui-line-height(9);
+}
+
+.title {
+	font-weight: 500;
+	@include ui-font(8);
+	@include ui-line-height(12);
+
+	width: 1060px;
+
+	@include ui-margin(bottom, 3);
+}
+
+.subtitle {
+	font-weight: 400;
+	@include ui-font(6);
+	@include ui-line-height(9);
+
+	border-bottom: 4px solid rgba(172, 172, 172, 0.3);
+
+	@include ui-padding(bottom, 3);
+	@include ui-margin(bottom, 4);
+}
+
+.img {
+	max-width: 808px;
+	max-height: 420px;
+	min-width: 808px;
+	min-height: 420px;
+
+	@include ui-margin(bottom, 4);
+}
+
+.body {
+	width: 1336px;
+	@include ui-font(5);
+}

@@ -1,0 +1,125 @@
+.wrapper {
+	@include ui-padding(top, 10);
+}
+
+.breadCrumbs {
+	@include ui-margin(bottom, 4);
+}
+
+.header {
+	@include ui-margin(bottom, 10);
+}
+
+.userBlock {
+	display: flex;
+	align-items: center;
+
+	@include ui-margin(bottom, 2);
+}
+
+.avatar {
+	width: 134px;
+	height: 123px;
+}
+
+.username {
+	font-weight: 500;
+	@include ui-font(7);
+
+	@include ui-margin(bottom, 4);
+	@include ui-padding(bottom, 4);
+
+	border-bottom: 2px solid #000;
+}
+
+.buttons {
+	display: flex;
+	gap: 8px;
+}
+
+.blogScontrols {
+	display: flex;
+	gap: 16px;
+
+	@include ui-font(4);
+
+	> input[type='radio'] {
+		display: none;
+
+		&:checked + label {
+			text-decoration: underline;
+			text-underline-offset: 4px;
+		}
+	}
+
+	> label {
+		color: #525252;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+			text-underline-offset: 4px;
+		}
+	}
+}
+
+.posts {
+	display: inline-flex;
+	flex-direction: column;
+	gap: 20px;
+
+	> li {
+		border-bottom: 1px solid rgba(172, 172, 172, 0.3);
+
+		@include ui-padding(bottom, 3);
+	}
+}
+
+.postHeader {
+	display: flex;
+	gap: 16px;
+
+	@include ui-font(5);
+	@include ui-margin(bottom, 3);
+}
+
+.postDate {
+	color: #c9c9c9;
+}
+
+.postImage {
+	width: 269px;
+	height: 153px;
+}
+
+.postBody {
+	display: flex;
+	align-items: center;
+
+	gap: 16px;
+}
+
+.postTitle {
+	font-weight: 500;
+	@include ui-font(6);
+
+	cursor: pointer;
+
+	@include ui-margin(bottom, 1);
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.postTags {
+	font-weight: 300;
+
+	@include ui-margin(bottom, 4);
+}
+
+.postText {
+	@include ui-font(4);
+
+	width: 1060px;
+}

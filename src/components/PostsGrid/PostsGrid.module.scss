@@ -1,0 +1,49 @@
+.grid {
+	display: grid;
+	grid-template-columns: repeat(2, 480px);
+	column-gap: 80px;
+	row-gap: 44px;
+
+	> li {
+		cursor: pointer;
+	}
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+
+	@include ui-font(5);
+	@include ui-margin(bottom, 2);
+}
+
+.category {
+	font-weight: 600;
+}
+
+.date {
+	color: $gray-date-color;
+}
+
+.image {
+	max-width: 480px;
+	max-height: 250px;
+	min-width: 480px;
+	min-height: 250px;
+
+	@include ui-margin(bottom, 2);
+}
+
+.title {
+	@include ui-font(5);
+	font-weight: 500;
+	@include ui-line-height(6);
+	@include ui-margin(bottom, 2);
+}
+
+.subtitle {
+	@include ui-font(4);
+	font-weight: 400;
+	@include ui-line-height(5);
+}

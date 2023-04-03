@@ -1,0 +1,30 @@
+.grid {
+	display: inline-grid;
+	grid-template-columns: repeat(2, auto);
+	column-gap: 76px;
+	row-gap: 8px;
+
+	@include ui-font(5);
+
+	> li {
+		justify-self: start;
+		display: flex;
+		align-items: center;
+
+		border: 1px solid transparent;
+		border-radius: 6px;
+
+		cursor: pointer;
+
+		padding: 5px;
+
+		&:hover {
+			border-color: #00000069;
+		}
+
+		> img {
+			width: 25px;
+			height: 23px;
+		}
+	}
+}

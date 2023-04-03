@@ -1,0 +1,17 @@
+.wrapper {
+	background-color: $gray-color;
+}
+
+.nav {
+	display: flex;
+	gap: 72px;
+
+	@include ui-line-height(7);
+	@include ui-font(6);
+
+	padding: 16px 72px;
+
+	> a {
+		color: $gray-soft-color;
+	}
+}

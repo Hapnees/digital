@@ -1,0 +1,12 @@
+.button {
+	border: none;
+	border-radius: 10px;
+
+	color: #fff;
+	@include ui-font(5);
+
+	background-color: $dark-color;
+	cursor: pointer;
+
+	padding: 8px 13px;
+}
