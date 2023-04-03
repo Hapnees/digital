@@ -6,11 +6,10 @@ interface IProps {
 	// FIXME: убрать any
 	setValue: (value: any) => void
 	controls: IBlogControl[]
+	name: string
 }
 
-const BlogsControls: FC<IProps> = ({ controls, setValue }) => {
-	const name = Date.now().toString()
-
+const BlogsControls: FC<IProps> = ({ controls, name, setValue }) => {
 	const onChangeRadio = (value: string) => setValue(value)
 
 	return (

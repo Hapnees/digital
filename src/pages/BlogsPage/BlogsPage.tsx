@@ -4,7 +4,11 @@ import BlogsTopGrid from '@/components/BlogsTopGrid/BlogsTopGrid'
 import WrapperLayout from '@/layouts/WrapperLayout/WrapperLayout'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
-import { blogsControlsBottom, blogsControlsTop } from './BlogsPage.data'
+import {
+	allMaterials,
+	blogsControlsBottom,
+	blogsControlsTop,
+} from './BlogsPage.data'
 import { IBottomControls, ITopControls } from './BlogsPage.interface'
 import cl from './BlogsPage.module.scss'
 import { getBottomBlogsContent } from './utils/getBottomBlogsContent'
@@ -35,6 +39,7 @@ const BlogsPage = () => {
 		<WrapperLayout>
 			<section className={cl.header}>
 				<BlogsControls
+					name='blogsTopControls'
 					controls={blogsControlsTop}
 					setValue={onChangeControlsTop}
 				/>
@@ -46,6 +51,7 @@ const BlogsPage = () => {
 
 			<section>
 				<BlogsControls
+					name='blogsBottomControls'
 					controls={blogsControlsBottom}
 					setValue={onChangeControlsBottom}
 				/>

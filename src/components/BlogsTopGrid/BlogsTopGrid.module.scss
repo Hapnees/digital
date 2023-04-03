@@ -1,7 +1,7 @@
 .grid {
 	display: inline-grid;
 	grid-template-columns: repeat(2, auto);
-	column-gap: 76px;
+	column-gap: 68px;
 	row-gap: 8px;
 
 	@include ui-font(5);
