@@ -5,6 +5,7 @@ import CategoryPage from './pages/CategoryPage/CategoryPage'
 import HomePage from './pages/HomePage/HomePage'
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
 import PostPage from './pages/PostPage/PostPage'
+import ProjectsPage from './pages/ProjectsPage/ProjectsPage'
 import SpecificBlogsPage from './pages/SpecificBlogsPage/SpecificBlogsPage'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 				<Route path='/category/:category/:id' element={<PostPage />} />
 				<Route path='/blogs' element={<BlogsPage />} />
 				<Route path='/blogs/:username' element={<SpecificBlogsPage />} />
+				<Route path='/projects' element={<ProjectsPage />} />
 				<Route path='*' element={<NotFoundPage />} />
 			</Route>
 		</Routes>
