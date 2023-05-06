@@ -1,0 +1,57 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @include ui-padding(top, 15);
+  @include ui-padding(bottom, 15);
+  @include ui-padding(left, 15);
+
+  >li {
+    border-bottom: 1px solid #D3D3D387;
+  }
+}
+
+.date {
+  color: $gray-date-color;
+  font-size: 20px;
+  line-height: 23px;
+  @include ui-margin(bottom, 3);
+}
+
+.title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+
+  width: 505px;
+  @include ui-margin(bottom, 3);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+}
+
+.info {
+  &__body {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+
+    width: 544px;
+
+    @include ui-margin(bottom, 8);
+  }
+
+  &__url {
+    color: #000000;
+    font-size: 20px;
+    line-height: 23px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
