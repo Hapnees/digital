@@ -4,7 +4,7 @@
 	column-gap: 80px;
 	row-gap: 44px;
 
-	> li {
+	>li {
 		cursor: pointer;
 	}
 }
@@ -31,6 +31,8 @@
 	max-height: 250px;
 	min-width: 480px;
 	min-height: 250px;
+
+	object-fit: cover;
 
 	@include ui-margin(bottom, 2);
 }
