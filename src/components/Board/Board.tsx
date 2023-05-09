@@ -2,6 +2,7 @@ import { IPost } from '@/types/post.interface'
 import { FC } from 'react'
 import cl from './Board.module.scss'
 import { useNavigate } from 'react-router'
+import { formatCategory } from '@/formatters/category.format'
 
 interface IProps {
   titleBoard: string
@@ -11,8 +12,13 @@ interface IProps {
 const Board: FC<IProps> = ({ titleBoard, posts }) => {
   const navigate = useNavigate()
 
-  const onClickNews = (post: IPost) => () => {
+  const onClickNewsTitle = (post: IPost) => () => {
     navigate(`/category/${post.category}/${post.id}`)
+  }
+
+  const onClickNewsCategory = (post: IPost) => () => {
+    const formattedCategory = formatCategory(post.category)
+    navigate(`/category/${formattedCategory}`)
   }
 
   return (
@@ -20,13 +26,19 @@ const Board: FC<IProps> = ({ titleBoard, posts }) => {
       <h1 className={cl.title}>{titleBoard}</h1>
       <ul className={cl.news}>
         {posts.map(post => (
-          <li key={post.id} onClick={onClickNews(post)}>
+          <li key={post.id}>
             <div className={cl.header}>
-              {post.category && <p className={cl.category}>#{post.category}</p>}
+              {post.category && (
+                <p className={cl.category} onClick={onClickNewsCategory(post)}>
+                  #{post.category}
+                </p>
+              )}
               <p className={cl.date}>{post.date}</p>
             </div>
 
-            <p className={cl.newsTitle}>{post.title}</p>
+            <p className={cl.newsTitle} onClick={onClickNewsTitle(post)}>
+              {post.title}
+            </p>
           </li>
         ))}
       </ul>

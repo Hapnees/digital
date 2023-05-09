@@ -22,6 +22,7 @@
 	max-width: 473px;
 
 	padding: 10px 74px;
+
 }
 
 .news {
@@ -47,6 +48,10 @@
 
 .category {
 	font-weight: 700;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 .date {
@@ -54,6 +59,10 @@
 }
 
 .newsTitle {
-	@include ui-font(4);
 	width: 370px;
+	@include ui-font(4);
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
