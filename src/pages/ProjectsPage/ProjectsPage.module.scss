@@ -43,7 +43,7 @@
 	display: inline-grid;
 	grid-template-columns: repeat(2, auto);
 
-	> li {
+	>li {
 		border: 1px solid rgba($color: #d3d3d3, $alpha: 0.53);
 		padding: 12px 32px 36px 20px;
 	}
@@ -51,4 +51,8 @@
 
 .description {
 	width: 544px;
+}
+
+.img {
+	height: 100%;
 }
