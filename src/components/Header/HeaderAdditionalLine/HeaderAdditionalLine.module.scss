@@ -9,9 +9,11 @@
 	@include ui-line-height(7);
 	@include ui-font(6);
 
+	@include ui-margin(left, 18);
 	padding: 16px 72px;
 
-	> a {
+	>a {
 		color: $gray-soft-color;
+		padding: 0 8px;
 	}
 }
