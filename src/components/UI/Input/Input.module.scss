@@ -1,7 +1,8 @@
 .wrapper {
 	position: relative;
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	gap: 6px;
 }
 
 .input {
@@ -24,4 +25,10 @@
 
 	width: 20px;
 	height: 20px;
+}
+
+
+.error {
+	color: rgb(217, 48, 48);
+	font-weight: 600;
 }

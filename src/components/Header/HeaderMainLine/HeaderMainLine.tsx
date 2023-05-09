@@ -7,6 +7,9 @@ import { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import cl from './HeaderMainLine.module.scss'
 import parentCl from '../Header.module.scss'
+import AuthForm from '@/components/AuthForm/AuthForm'
+import { useAppSelector } from '@/hooks/useAppSelector'
+import { useActions } from '@/hooks/useActions'
 
 type ITitleNav = 'Блоги' | 'Спец. проекты' | 'Лекториум' | 'Компании' | 'Законы'
 
@@ -18,8 +21,11 @@ interface INav {
 const HeaderMainLine = () => {
   const navigte = useNavigate()
   const [isShowModal, setIsShowModal] = useState(false)
+  const [isShowSignInForm, setIsShowSignInForm] = useState(false)
 
   const { pathname } = useLocation()
+
+  const { setEmail } = useActions()
 
   const onClickLogo = () => navigte('/')
 
@@ -33,6 +39,20 @@ const HeaderMainLine = () => {
     { title: 'Компании', href: '/companies' },
     { title: 'Законы', href: '/category/laws' },
   ]
+
+  const { email } = useAppSelector(state => state.auth)
+
+  const loginButtonText = email ? 'Выйти' : 'Войти'
+
+  const loginButtonEvent = () => {
+    if (email) {
+      setEmail(undefined)
+      return
+    }
+    setIsShowSignInForm(true)
+  }
+
+  const closeAuthForm = () => setIsShowSignInForm(false)
 
   return (
     <section className={cl.wrapper}>
@@ -60,9 +80,12 @@ const HeaderMainLine = () => {
 
           <div className={cl.cross} onClick={onClickCross}></div>
 
-          <Input placeholder='Поиск...' />
+          <Input placeholder='Поиск...' isSearch />
 
-          <LoginButton>Войти</LoginButton>
+          <LoginButton onClick={loginButtonEvent}>
+            {loginButtonText}
+          </LoginButton>
+          {isShowSignInForm && <AuthForm closeFunc={closeAuthForm} />}
         </article>
       </article>
       {isShowModal && (
